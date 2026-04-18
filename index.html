@@ -1,94 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>石川 Shi Chuan | AI Product Designer</title>
+<title>石川 | AI产品设计师</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#333;background:#fafafa;min-height:100vh}
-.container{max-width:920px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:240px 1fr;gap:52px}
-@media(max-width:660px){.container{grid-template-columns:1fr}}
-.sidebar{text-align:center}
-.avatar{width:120px;height:120px;border-radius:50%;background:#e0e7f0;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:52px}
-.sidebar h1{font-size:21px;font-weight:700;margin-bottom:6px;color:#1a1a1a}
-.role{font-size:13px;color:#666;line-height:1.7;margin-bottom:10px}
-.email{margin-bottom:18px}
-.email a{font-size:13px;color:#3d7fd4;text-decoration:none}
-.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.btns a{padding:5px 16px;border:1px solid #d0d7de;border-radius:20px;font-size:13px;color:#444;text-decoration:none;background:#fff;transition:.2s}
-.btns a:hover{border-color:#3d7fd4;color:#3d7fd4}
-.main section{margin-bottom:34px}
-h2{font-size:17px;font-weight:700;color:#3d7fd4;border-bottom:2px solid #e8f0fb;padding-bottom:7px;margin-bottom:14px}
-.main p{font-size:15px;line-height:1.8;color:#444}
-.card{background:#fff;border:1px solid #e4e8ed;border-radius:10px;padding:20px;margin-bottom:14px;transition:.2s}
-.card:hover{box-shadow:0 4px 18px rgba(0,0,0,.07)}
-.card h3{font-size:15px;margin-bottom:8px}
-.card h3 a{color:#1a1a1a;text-decoration:none;font-weight:600}
-.card h3 a:hover{color:#3d7fd4}
-.card p{font-size:14px;color:#666;line-height:1.7;margin-bottom:10px}
-.tags{margin-bottom:10px}
-.tag{display:inline-block;background:#eef3fc;color:#3d7fd4;font-size:12px;padding:2px 10px;border-radius:12px;margin:2px 4px 2px 0}
-.card-links a{font-size:13px;color:#3d7fd4;text-decoration:none;margin-right:14px}
-.card-links a:hover{text-decoration:underline}
-ul.ilist{list-style:none;padding:0}
-ul.ilist li{font-size:14px;color:#555;padding:5px 0 5px 18px;position:relative;line-height:1.6}
-ul.ilist li::before{content:"▸";position:absolute;left:0;color:#3d7fd4}
-.edu{font-size:14px;color:#555;line-height:1.8}
-.edu strong{color:#222;font-size:15px;display:block;margin-bottom:2px}
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: #f5f6fa;
+    color: #1a1a2e;
+    min-height: 100vh;
+  }
+
+  /* 顶部渐变 header */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(99,102,241,.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(236,72,153,.1) 0%, transparent 60%);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+
+  .avatar-wrap {
+    width: 100px; height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    padding: 3px;
+  }
+  .avatar-inner {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: #1e2a4a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 42px;
+  }
+
+  .hero h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: .5px; }
+  .hero h1 span { color: #a5b4fc; }
+  .hero .subtitle {
+    font-size: 14px; color: #94a3b8; line-height: 1.8; margin-bottom: 24px;
+  }
+  .badge-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 28px; }
+  .badge {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    color: #c7d2fe;
+    font-size: 12px; padding: 4px 14px; border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .contact-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .contact-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    text-decoration: none;
+    transition: .2s;
+  }
+  .btn-primary { background: #6366f1; color: #fff; }
+  .btn-primary:hover { background: #4f46e5; transform: translateY(-1px); }
+  .btn-ghost { background: rgba(255,255,255,.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,.15); }
+  .btn-ghost:hover { background: rgba(255,255,255,.14); transform: translateY(-1px); }
+
+  /* 主体内容 */
+  .main { max-width: 820px; margin: -32px auto 60px; padding: 0 20px; }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); }
+
+  .section-title {
+    font-size: 16px; font-weight: 700; color: #1a1a2e;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 18px; padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .section-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .ic-purple { background: #ede9fe; }
+  .ic-blue   { background: #dbeafe; }
+  .ic-pink   { background: #fce7f3; }
+  .ic-green  { background: #dcfce7; }
+
+  .about-text { font-size: 15px; line-height: 1.9; color: #475569; }
+
+  /* 项目卡 */
+  .project {
+    border: 1px solid #e8ecf4;
+    border-radius: 12px; padding: 20px;
+    transition: .2s; cursor: default;
+  }
+  .project:hover { border-color: #6366f1; background: #fafbff; }
+  .proj-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+  .proj-title { font-size: 16px; font-weight: 700; color: #1a1a2e; }
+  .proj-status {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    background: #dcfce7; color: #16a34a; font-weight: 600; white-space: nowrap;
+  }
+  .proj-desc { font-size: 14px; color: #64748b; line-height: 1.75; margin-bottom: 14px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tag {
+    font-size: 12px; padding: 3px 10px; border-radius: 6px;
+    background: #f1f5f9; color: #475569; font-weight: 500;
+  }
+  .proj-links { display: flex; gap: 12px; }
+  .proj-link {
+    font-size: 13px; color: #6366f1; text-decoration: none; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .proj-link:hover { text-decoration: underline; }
+
+  /* 兴趣方向 */
+  .interest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media(max-width:520px){ .interest-grid { grid-template-columns: 1fr; } }
+  .interest-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px; border-radius: 10px;
+    background: #f8faff; border: 1px solid #e8ecf4;
+    font-size: 14px; color: #334155;
+  }
+  .interest-dot { width: 8px; height: 8px; border-radius: 50%; background: #6366f1; flex-shrink: 0; }
+
+  /* 教育 */
+  .edu-item { display: flex; align-items: flex-start; gap: 16px; }
+  .edu-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .edu-info { flex: 1; }
+  .edu-school { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+  .edu-major { font-size: 13px; color: #64748b; }
+
+  footer {
+    text-align: center; padding: 24px;
+    font-size: 13px; color: #94a3b8;
+  }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="sidebar">
-    <div class="avatar">👤</div>
-    <h1>石川 Shi Chuan</h1>
-    <div class="role">Product Manager<br>AI Product Designer<br>Independent Developer</div>
-    <div class="email"><a href="mailto:shic68748@gmail.com">shic68748@gmail.com</a></div>
-    <div class="btns">
-      <a href="https://github.com/shic68748-gif" target="_blank">GitHub</a>
-      <a href="mailto:shic68748@gmail.com">Email</a>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <div class="avatar-inner">👤</div>
+    </div>
+    <h1>石川 <span>Shi Chuan</span></h1>
+    <div class="subtitle">
+      专注于 AI 工具与智能产品设计<br>
+      让复杂的技术变得触手可及
+    </div>
+    <div class="badge-row">
+      <span class="badge">产品经理</span>
+      <span class="badge">AI 产品设计师</span>
+      <span class="badge">独立开发者</span>
+    </div>
+    <div class="contact-row">
+      <a href="mailto:shic68748@gmail.com" class="contact-btn btn-primary">✉️ 发邮件联系</a>
+      <a href="https://github.com/shic68748-gif" target="_blank" class="contact-btn btn-ghost">💻 GitHub</a>
     </div>
   </div>
-  <div class="main">
-    <section>
-      <h2>About Me</h2>
-      <p>Hi, I'm Shi Chuan (石川), a Product Manager and AI Product Designer based in China. I focus on building intelligent tools that make complex technology accessible to everyone. Currently open to opportunities at the intersection of AI and product innovation.</p>
-    </section>
-    <section>
-      <h2>Products & Projects</h2>
-      <div class="card">
-        <h3><a href="https://my-agent-platform.vercel.app/" target="_blank">AI Agent Platform</a></h3>
-        <p>A no-code intelligent agent building platform, similar to Dify. Enables users to design, configure, and deploy AI agents for enterprise B2B workflows — without writing a single line of code.</p>
-        <div class="tags">
-          <span class="tag">TypeScript</span>
-          <span class="tag">AI Agent</span>
-          <span class="tag">No-code</span>
-          <span class="tag">B2B SaaS</span>
-        </div>
-        <div class="card-links">
-          <a href="https://my-agent-platform.vercel.app/" target="_blank">🔗 Live Demo</a>
-          <a href="https://github.com/shic68748-gif/my-agent-platform" target="_blank">💻 GitHub</a>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h2>Interests</h2>
-      <ul class="ilist">
-        <li>AI Product Design & Workflow Automation</li>
-        <li>No-code / Low-code Platform Development</li>
-        <li>Large Language Model Applications</li>
-        <li>B2B SaaS & Enterprise Tools</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Education</h2>
-      <div class="edu">
-        <strong>Hebei Agricultural University — Modern Science & Technology College</strong>
-        B.Eng. in Network Engineering
-      </div>
-    </section>
-  </div>
 </div>
+
+<!-- 主内容 -->
+<div class="main">
+
+  <!-- 关于我 -->
+  <div class="card">
+    <div class="section-title">
+      <div class="section-icon ic-purple">👋</div>
+      关于我
+    </div>
+    <p class="about-text">
+      你好，我是石川，一名产品经理与 AI 产品设计师，目前专注于构建面向企业的智能工具平台。
+      我相信好的产品应该让复杂的 AI 能力变得简单易用。目前正积极寻找 AI 产品相关机会，
+      同时持续探索 C 端 AI 产品的可能性。
+    </p>
+  </div>
+
+  <!-- 产品与项目 -->
+  <div class="card">
+    <div class="section-title">
+      <div class="section-icon ic-blue">🚀</div>
+      产品与项目
+    </div>
+    <div class="project">
+      <div class="proj-header">
+        <div class="proj-title">AI 智能体搭建平台</div>
+        <span class="proj-status">✦ 已上线</span>
+      </div>
+      <p class="proj-desc">
+        类 Dify 的 B 端无代码智能体构建平台。用户可通过可视化界面设计、配置并部署 AI Agent，
+        适用于企业级工作流自动化场景，无需编写任何代码即可快速落地 AI 应用。
+      </p>
+      <div class="tag-row">
+        <span class="tag">TypeScript</span>
+        <span class="tag">AI Agent</span>
+        <span class="tag">无代码平台</span>
+        <span class="tag">B2B SaaS</span>
+        <span class="tag">工作流自动化</span>
+      </div>
+      <div class="proj-links">
+        <a href="https://my-agent-platform.vercel.app/" target="_blank" class="proj-link">🔗 在线体验</a>
+        <a href="https://github.com/shic68748-gif/my-agent-platform" target="_blank" class="proj-link">💻 查看代码</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 关注方向 -->
+  <div class="card">
+    <div class="section-title">
+      <div class="section-icon ic-pink">💡</div>
+      关注方向
+    </div>
+    <div class="interest-grid">
+      <div class="interest-item"><div class="interest-dot"></div>AI 产品设计与工作流自动化</div>
+      <div class="interest-item"><div class="interest-dot"></div>无代码 / 低代码平台开发</div>
+      <div class="interest-item"><div class="interest-dot"></div>大语言模型应用落地</div>
+      <div class="interest-item"><div class="interest-dot"></div>B2B SaaS 与企业智能化</div>
+    </div>
+  </div>
+
+  <!-- 教育背景 -->
+  <div class="card">
+    <div class="section-title">
+      <div class="section-icon ic-green">🎓</div>
+      教育背景
+    </div>
+    <div class="edu-item">
+      <div class="edu-icon">🏫</div>
+      <div class="edu-info">
+        <div class="edu-school">河北农业大学现代科技学院</div>
+        <div class="edu-major">网络工程专业 · 工学学士</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2025 石川 Shi Chuan · shic68748-gif.github.io</footer>
+
 </body>
 </html>

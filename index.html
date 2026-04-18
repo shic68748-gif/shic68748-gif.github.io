@@ -1,233 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Your Name | Your Affiliation</title>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.">
-    
-    <meta name="keywords" content="minimal light">
-    
-    
-    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
-    
-
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-dark.png" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
-
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
-
-    
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
-    
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        
-        
-        <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
-        
-
-        <h1>Your Name</h1>
-
-        
-        <position style="font-size:1.10rem;">Ph.D. Student</position>
-        <br>
-        
-        
-        <a href="" rel="noopener"><autocolor>Your Affiliation</autocolor></a>
-        <br>
-        
-        
-        <email>yourname (at) example.edu</email>
-        
-
-        <br>
-        <br>
-        <div class="social-icons">
-        
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="assets/files/curriculum_vitae.pdf">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://github.com/">
-          <i class="fab fa-github"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 0 0 0" href="https://twitter.com/">
-          <i class="fab fa-twitter"></i>
-        </a>
-        
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石川 Shi Chuan | AI Product Designer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#333;background:#fafafa;min-height:100vh}
+.container{max-width:920px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:240px 1fr;gap:52px}
+@media(max-width:660px){.container{grid-template-columns:1fr}}
+.sidebar{text-align:center}
+.avatar{width:120px;height:120px;border-radius:50%;background:#e0e7f0;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.sidebar h1{font-size:21px;font-weight:700;margin-bottom:6px;color:#1a1a1a}
+.role{font-size:13px;color:#666;line-height:1.7;margin-bottom:10px}
+.email{margin-bottom:18px}
+.email a{font-size:13px;color:#3d7fd4;text-decoration:none}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.btns a{padding:5px 16px;border:1px solid #d0d7de;border-radius:20px;font-size:13px;color:#444;text-decoration:none;background:#fff;transition:.2s}
+.btns a:hover{border-color:#3d7fd4;color:#3d7fd4}
+.main section{margin-bottom:34px}
+h2{font-size:17px;font-weight:700;color:#3d7fd4;border-bottom:2px solid #e8f0fb;padding-bottom:7px;margin-bottom:14px}
+.main p{font-size:15px;line-height:1.8;color:#444}
+.card{background:#fff;border:1px solid #e4e8ed;border-radius:10px;padding:20px;margin-bottom:14px;transition:.2s}
+.card:hover{box-shadow:0 4px 18px rgba(0,0,0,.07)}
+.card h3{font-size:15px;margin-bottom:8px}
+.card h3 a{color:#1a1a1a;text-decoration:none;font-weight:600}
+.card h3 a:hover{color:#3d7fd4}
+.card p{font-size:14px;color:#666;line-height:1.7;margin-bottom:10px}
+.tags{margin-bottom:10px}
+.tag{display:inline-block;background:#eef3fc;color:#3d7fd4;font-size:12px;padding:2px 10px;border-radius:12px;margin:2px 4px 2px 0}
+.card-links a{font-size:13px;color:#3d7fd4;text-decoration:none;margin-right:14px}
+.card-links a:hover{text-decoration:underline}
+ul.ilist{list-style:none;padding:0}
+ul.ilist li{font-size:14px;color:#555;padding:5px 0 5px 18px;position:relative;line-height:1.6}
+ul.ilist li::before{content:"▸";position:absolute;left:0;color:#3d7fd4}
+.edu{font-size:14px;color:#555;line-height:1.8}
+.edu strong{color:#222;font-size:15px;display:block;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+    <div class="avatar">👤</div>
+    <h1>石川 Shi Chuan</h1>
+    <div class="role">Product Manager<br>AI Product Designer<br>Independent Developer</div>
+    <div class="email"><a href="mailto:shic68748@gmail.com">shic68748@gmail.com</a></div>
+    <div class="btns">
+      <a href="https://github.com/shic68748-gif" target="_blank">GitHub</a>
+      <a href="mailto:shic68748@gmail.com">Email</a>
+    </div>
+  </div>
+  <div class="main">
+    <section>
+      <h2>About Me</h2>
+      <p>Hi, I'm Shi Chuan (石川), a Product Manager and AI Product Designer based in China. I focus on building intelligent tools that make complex technology accessible to everyone. Currently open to opportunities at the intersection of AI and product innovation.</p>
+    </section>
+    <section>
+      <h2>Products & Projects</h2>
+      <div class="card">
+        <h3><a href="https://my-agent-platform.vercel.app/" target="_blank">AI Agent Platform</a></h3>
+        <p>A no-code intelligent agent building platform, similar to Dify. Enables users to design, configure, and deploy AI agents for enterprise B2B workflows — without writing a single line of code.</p>
+        <div class="tags">
+          <span class="tag">TypeScript</span>
+          <span class="tag">AI Agent</span>
+          <span class="tag">No-code</span>
+          <span class="tag">B2B SaaS</span>
         </div>
-        <br>
-
-      </header>
-      <section>
-
-      <h2 id="about-me">About Me</h2>
-
-<p>I am a Ph.D. student at …</p>
-
-<h2 id="research-interests">Research Interests</h2>
-
-<ul>
-  <li><strong>Computer Vision:</strong> image recognition, image generation, video captioning</li>
-  <li><strong>Machine Learning:</strong> meta-learning, incremental learning, transfer learning</li>
-</ul>
-
-<h2 id="news">News</h2>
-
-<ul>
-  <li><strong>[Feb. 2020]</strong> Our paper about incremental learning is accepted to CVPR 2020.</li>
-  <li><strong>[Feb. 2020]</strong> We will host the ACM Multimedia Asia 2020 conference in Singapore!</li>
-  <li><strong>[Sept. 2019]</strong> Our paper about few-shot learning is accepted to NeurIPS 2019.</li>
-  <li><strong>[Mar. 2019]</strong> Our paper about few-shot learning is accepted to CVPR 2019.</li>
-</ul>
-
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
-
-<div class="publications">
-<ol class="bibliography">
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="./assets/img/teaser_example_2.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-            <abbr class="badge">MICCAI</abbr>
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2306.00988.pdf">Continual Learning for Abdominal Multi-Organ and Tumor Segmentation</a></div>
-      <div class="author">Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou* (*Corresponding authors)</div>
-      <div class="periodical"><em>International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.</em>
+        <div class="card-links">
+          <a href="https://my-agent-platform.vercel.app/" target="_blank">🔗 Live Demo</a>
+          <a href="https://github.com/shic68748-gif/my-agent-platform" target="_blank">💻 GitHub</a>
+        </div>
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2306.00988.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/MrGiovanni/ContinualLearning" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-      
-       
-      <a href="https://bib.yliu.me/MICCAI23.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
-      
-       
-      <strong> <i style="color:#e74d3c">Early Accept</i></strong>
-      
-      
-    </div>
-  </div>
-</div>
-</li>
-
-<br />
-
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="./assets/img/teaser_example.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-            <abbr class="badge">CVPR</abbr>
-  </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://arxiv.org/pdf/2002.10211.pdf">Mnemonics Training: Multi-Class Incremental Learning without Forgetting</a></div>
-      <div class="author"><strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun</div>
-      <div class="periodical"><em>IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.</em>
+    </section>
+    <section>
+      <h2>Interests</h2>
+      <ul class="ilist">
+        <li>AI Product Design & Workflow Automation</li>
+        <li>No-code / Low-code Platform Development</li>
+        <li>Large Language Model Applications</li>
+        <li>B2B SaaS & Enterprise Tools</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <div class="edu">
+        <strong>Hebei Agricultural University — Modern Science & Technology College</strong>
+        B.Eng. in Network Engineering
       </div>
-    <div class="links">
-       
-      <a href="https://arxiv.org/pdf/2002.10211.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      
-       
-      <a href="https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      
-       
-      <a href="https://class-il.mpi-inf.mpg.de/mnemonics/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project Page</a>
-      
-       
-      <a href="https://class-il.mpi-inf.mpg.de/mnemonics/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
-      
-       
-      <strong> <i style="color:#e74d3c">Oral Presentation</i></strong>
-      
-      
-    </div>
+    </section>
   </div>
 </div>
-</li>
-
-<br />
-
-
-
-</ol>
-</div>
-
-<h2 id="services">Services</h2>
-
-<h4 style="margin:0 10px 0;">Conference Reviewers</h4>
-
-<ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr2023.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021-2023</autocolor></a></li>
-  <li><a href="http://iccv2021.thecvf.com/"><autocolor>IEEE/CVF International Conference on Computer Vision (ICCV) 2021</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2022</autocolor></a></li>
-</ul>
-
-<h4 style="margin:0 10px 0;">Journal Reviewers</h4>
-
-<ul style="margin:0 0 20px;">
-  <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</autocolor></a></li>
-  <li><a href="https://www.springer.com/journal/11263"><autocolor>International Journal of Computer Vision (IJCV)</autocolor></a></li>
-</ul>
-
-
-      <br>
-
-      
-      <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
-      
-
-      </section>
-      <footer>
-        
-      </footer>
-    </div>
-    <script src="/assets/js/scale.fix.js"></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-111540567-4', 'auto');
-      ga('send', 'pageview');
-    </script>
-    
-  </body>
+</body>
 </html>

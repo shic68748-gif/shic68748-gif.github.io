@@ -4,20 +4,35 @@ layout: homepage
 
 ## About Me
 
-I am a Ph.D. student at ...
+Hi, I'm **Shi Chuan (石川)**, a Product Manager and AI Product Designer based in China. I focus on building intelligent tools that make complex technology accessible to everyone. Currently exploring opportunities at the intersection of AI and product innovation.
 
-## Research Interests
+## Products & Projects
 
-- **Computer Vision:** image recognition, image generation, video captioning
-- **Machine Learning:** meta-learning, incremental learning, transfer learning
+<div class="publications">
+  <div class="publication">
+    <div class="pub-content">
+      <h3><a href="https://my-agent-platform.vercel.app/" target="_blank">AI Agent Platform</a></h3>
+      <p>A no-code intelligent agent building platform, similar to Dify. Enables users to design, configure, and deploy AI agents for enterprise workflows — without writing a single line of code. Built with TypeScript.</p>
+      <div class="links">
+        <a href="https://my-agent-platform.vercel.app/" target="_blank">[Live Demo]</a>
+        <a href="https://github.com/shic68748-gif/my-agent-platform" target="_blank">[GitHub]</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-## News
+## Interests
 
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019.
+- AI Product Design & Workflow Automation
+- No-code / Low-code Platform Development  
+- Large Language Model Applications
+- B2B SaaS & Enterprise Tools
 
-{% include_relative _includes/publications.md %}
+## Education
 
-{% include_relative _includes/services.md %}
+<div class="awards">
+  <p>
+    <b>Hebei Agricultural University — Modern Science & Technology College</b><br>
+    B.Eng. in Network Engineering
+  </p>
+</div>

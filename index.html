@@ -2,137 +2,257 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>石川 Shi Chuan | AI产品设计师</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<title>石川 | AI产品经理</title>
 <style>
+:root{--bg:#04060f;--s:#0c1018;--b:#1a2235;--a1:#4f8ef7;--a2:#a78bfa;--a3:#34d399;--tx:#eef2ff;--mu:#5a6a85}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:#fff;color:#111;min-height:100vh}
-.topbar{height:4px;background:#111;width:100%}
-.wrap{max-width:860px;margin:0 auto}
-.header{padding:52px 48px 44px;border-bottom:1px solid #ebebeb;display:flex;align-items:flex-start;gap:32px}
-@media(max-width:600px){.header{flex-direction:column;padding:32px 24px 28px;gap:20px}}
-.av{width:76px;height:76px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;flex-shrink:0;letter-spacing:-1px}
-.hinfo{flex:1}
-.hname{font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#111;margin-bottom:6px}
-.htitle{font-size:14px;color:#777;margin-bottom:18px;line-height:1.6}
-.htags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.htag{font-size:12px;padding:4px 12px;border:1px solid #ddd;border-radius:4px;color:#555;background:#fafafa}
-.htag.open{background:#111;color:#fff;border-color:#111}
-.hlinks{display:flex;gap:10px;flex-wrap:wrap}
-.hl{font-size:13px;padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:600;cursor:pointer}
-.hl-dark{background:#111;color:#fff}
-.hl-dark:hover{background:#333}
-.hl-light{background:#fff;color:#111;border:1px solid #ddd}
-.hl-light:hover{background:#f5f5f5}
-.body{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #ebebeb}
-@media(max-width:640px){.body{grid-template-columns:1fr}}
-.col{padding:40px 48px}
-@media(max-width:640px){.col{padding:28px 24px}}
-.col-r{border-left:1px solid #ebebeb}
-@media(max-width:640px){.col-r{border-left:none;border-top:1px solid #ebebeb}}
-.sh{font-size:11px;font-weight:700;letter-spacing:2px;color:#aaa;text-transform:uppercase;margin-bottom:20px}
-.about-p{font-size:14px;line-height:1.9;color:#555}
-.spacer{height:32px}
-.ilist{list-style:none}
-.ilist li{font-size:14px;color:#444;padding:10px 0;border-bottom:1px solid #f5f5f5;display:flex;align-items:center;gap:10px}
-.ilist li:last-child{border-bottom:none;padding-bottom:0}
-.idot{width:4px;height:4px;border-radius:50%;background:#111;flex-shrink:0}
-.edu-box{border-left:3px solid #111;padding:14px 18px;background:#fafafa;border-radius:0 8px 8px 0}
-.edu-s{font-size:15px;font-weight:700;color:#111;margin-bottom:5px}
-.edu-m{font-size:13px;color:#777}
-.proj{border:1px solid #e8e8e8;border-radius:12px;padding:24px;background:#fafafa;transition:border-color .2s,box-shadow .2s}
-.proj:hover{border-color:#111;box-shadow:0 4px 20px rgba(0,0,0,.06)}
-.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:12px}
-.proj-name{font-size:16px;font-weight:800;color:#111;letter-spacing:-0.3px}
-.live-badge{font-size:11px;background:#111;color:#fff;padding:4px 10px;border-radius:4px;font-weight:700;white-space:nowrap;flex-shrink:0}
-.proj-p{font-size:14px;color:#666;line-height:1.8;margin-bottom:16px}
-.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px}
-.ptag{font-size:12px;padding:3px 10px;background:#fff;border:1px solid #e0e0e0;border-radius:4px;color:#777}
-.plinks{display:flex;gap:16px}
-.plink{font-size:13px;color:#111;text-decoration:none;font-weight:700;border-bottom:1.5px solid #111;padding-bottom:2px;transition:opacity .2s}
-.plink:hover{opacity:.6}
-.more-note{margin-top:20px;padding:16px;border:1px dashed #ddd;border-radius:8px;font-size:13px;color:#aaa;text-align:center;line-height:1.7}
-footer{padding:24px 48px;border-top:1px solid #ebebeb;display:flex;justify-content:space-between;font-size:12px;color:#ccc}
-@media(max-width:600px){footer{padding:20px 24px;flex-direction:column;gap:4px}}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;min-height:100vh}
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 12s ease-in-out infinite}
+.o1{width:600px;height:600px;background:radial-gradient(circle,rgba(79,142,247,.18),transparent 70%);top:-200px;left:-150px;animation-delay:0s}
+.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(167,139,250,.15),transparent 70%);top:30%;right:-180px;animation-delay:-4s}
+.o3{width:350px;height:350px;background:radial-gradient(circle,rgba(52,211,153,.12),transparent 70%);bottom:5%;left:25%;animation-delay:-8s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-30px) scale(1.05)}66%{transform:translate(-15px,20px) scale(.97)}}
+.page{position:relative;z-index:1;max-width:1020px;margin:0 auto;padding:0 44px}
+@media(max-width:600px){.page{padding:0 20px}}
+nav{padding:26px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;background:linear-gradient(120deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.3px}
+.navlinks{display:flex;gap:28px}
+.navlinks a{font-size:12px;color:var(--mu);text-decoration:none;letter-spacing:.8px;transition:.2s}
+.navlinks a:hover{color:var(--tx)}
+.hero{padding:76px 0 52px;display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:center}
+@media(max-width:680px){.hero{grid-template-columns:1fr;gap:36px}}
+.eyebrow{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--a1);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:'';width:28px;height:1px;background:linear-gradient(to right,var(--a1),var(--a2))}
+h1{font-family:'Syne',sans-serif;font-size:clamp(44px,8vw,78px);font-weight:800;line-height:1.02;letter-spacing:-2px;margin-bottom:6px}
+h1 .cn{display:block;background:linear-gradient(125deg,#fff 20%,rgba(255,255,255,.45) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1 .en{display:block;font-size:.48em;color:var(--mu);letter-spacing:3px;font-weight:400;-webkit-text-fill-color:var(--mu)}
+.subtitle{font-size:15px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:28px}
+.subtitle strong{color:var(--a2);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:34px}
+.chip{font-size:11px;padding:5px 14px;border-radius:20px;border:1px solid var(--b);color:rgba(255,255,255,.5);background:rgba(255,255,255,.02);transition:.25s}
+.chip.on{border-color:var(--a1);color:var(--a1);background:rgba(79,142,247,.07)}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font-size:13px;padding:10px 22px;border-radius:8px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:.2s;font-family:'Noto Sans SC',sans-serif}
+.btn-pri{background:linear-gradient(135deg,var(--a1),var(--a2));color:#fff;box-shadow:0 0 28px rgba(79,142,247,.25)}
+.btn-pri:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(79,142,247,.45)}
+.btn-gh{background:rgba(255,255,255,.04);color:rgba(255,255,255,.65);border:1px solid var(--b)}
+.btn-gh:hover{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.07)}
+.av-wrap{position:relative;display:flex;justify-content:center}
+.av-ring{width:172px;height:172px;border-radius:50%;padding:2.5px;background:conic-gradient(from 0deg,var(--a1),var(--a2),var(--a3),var(--a1));animation:spin 6s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.av-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--s);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--tx)}
+.av-inner img{width:100%;height:100%;object-fit:cover;object-position:top}
+.av-badge{position:absolute;background:rgba(13,17,23,.9);border:1px solid var(--b);border-radius:10px;padding:7px 12px;backdrop-filter:blur(12px);white-space:nowrap}
+.av-badge .v{font-size:15px;font-weight:700;color:var(--a1);font-family:'Syne',sans-serif}
+.av-badge .l{font-size:10px;color:var(--mu)}
+.ab1{top:-8px;right:-18px}
+.ab2{bottom:4px;left:-24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b);border:1px solid var(--b);border-radius:14px;overflow:hidden;margin-bottom:68px}
+.sbox{background:var(--s);padding:22px 16px;text-align:center}
+.sv{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,var(--a1),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.sl{font-size:11px;color:var(--mu)}
+.sec{margin-bottom:64px}
+.sec-hd{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.sec-n{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--a1);letter-spacing:2.5px}
+.sec-t{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;letter-spacing:-.4px}
+.sec-l{flex:1;height:1px;background:linear-gradient(to right,var(--b),transparent)}
+.tl{padding-left:22px;position:relative}
+.tl::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:1px;background:linear-gradient(to bottom,var(--a1) 0%,var(--a2) 50%,transparent 100%)}
+.tli{position:relative;margin-bottom:28px}
+.tli:last-child{margin-bottom:0}
+.dot{position:absolute;left:-26px;top:7px;width:8px;height:8px;border-radius:50%;border:2px solid var(--bg)}
+.d-blue{background:var(--a1);box-shadow:0 0 10px var(--a1)}
+.d-purple{background:var(--a2);box-shadow:0 0 10px var(--a2)}
+.d-green{background:var(--a3);box-shadow:0 0 10px var(--a3)}
+.d-grey{background:var(--mu)}
+.tli-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:3px}
+.tli-co{font-size:14px;font-weight:700}
+.tli-dt{font-size:11px;color:var(--mu);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.tli-ro{font-size:12px;color:var(--a2);font-weight:500;margin-bottom:7px}
+.tli-ul{font-size:12px;color:rgba(255,255,255,.45);line-height:1.85}
+.tli-ul li{margin-left:14px;margin-bottom:2px}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+@media(max-width:580px){.pgrid{grid-template-columns:1fr}}
+.pc{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:22px;transition:.3s;position:relative;overflow:hidden}
+.pc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,142,247,.05),rgba(167,139,250,.05));opacity:0;transition:.3s}
+.pc:hover{border-color:rgba(79,142,247,.35);transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.5)}
+.pc:hover::after{opacity:1}
+.pc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:9px}
+.pc-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700}
+.pc-live{font-size:10px;padding:3px 9px;border-radius:20px;font-weight:600;background:rgba(52,211,153,.1);color:var(--a3);border:1px solid rgba(52,211,153,.2)}
+.pc-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:13px}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}
+.ptag{font-size:10px;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.04);color:rgba(255,255,255,.35);border:1px solid var(--b)}
+.pls{display:flex;gap:12px}
+.pl{font-size:12px;color:var(--a1);font-weight:600;text-decoration:none;transition:.2s}
+.pl:hover{color:#fff}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:580px){.sgrid{grid-template-columns:1fr}}
+.scat{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:18px}
+.scat-t{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--a1);margin-bottom:13px;font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:5px}
+.p1{background:linear-gradient(135deg,rgba(79,142,247,.18),rgba(167,139,250,.18));color:rgba(255,255,255,.88);border:1px solid rgba(79,142,247,.25);font-size:12px;padding:4px 11px;border-radius:6px}
+.p2{background:rgba(255,255,255,.04);color:rgba(255,255,255,.55);border:1px solid var(--b);font-size:12px;padding:4px 11px;border-radius:6px}
+.p3{background:transparent;color:var(--mu);border:1px solid rgba(255,255,255,.07);font-size:12px;padding:4px 11px;border-radius:6px}
+.edu-box{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:22px;display:flex;align-items:center;gap:18px}
+.edu-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--a1),var(--a2));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.edu-school{font-size:15px;font-weight:700;margin-bottom:5px}
+.edu-major{font-size:13px;color:var(--mu)}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--mu);margin-top:20px}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--a3);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.fi{opacity:0;transform:translateY(22px);animation:fi .65s ease forwards}
+@keyframes fi{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.38s}.d5{animation-delay:.5s}
 </style>
 </head>
 <body>
-<div class="topbar"></div>
-<div class="wrap">
+<div class="orbs"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+<div class="page">
 
-  <div class="header">
-    <img src="avatar.png" alt="石川" style="width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;">
-    <div class="hinfo">
-      <div class="hname">石川 &nbsp;Shi Chuan</div>
-      <div class="htitle">产品经理 &nbsp;·&nbsp; AI 产品设计师 &nbsp;·&nbsp; 独立开发者</div>
-      <div class="htags">
-        <span class="htag">AI 工具产品</span>
-        <span class="htag">B2B SaaS</span>
-        <span class="htag">无代码平台</span>
-        <span class="htag open">Open to Work</span>
-      </div>
-      <div class="hlinks">
-        <a href="mailto:shic68748@gmail.com" class="hl hl-dark">✉ 发邮件联系</a>
-        <a href="https://github.com/shic68748-gif" target="_blank" class="hl hl-light">GitHub →</a>
-      </div>
+<nav class="fi d1">
+  <div class="logo">SC · 石川</div>
+  <div class="navlinks">
+    <a href="#exp">经历</a><a href="#proj">项目</a><a href="#skills">技能</a><a href="mailto:shic68748@gmail.com">联系</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="fi d2">
+    <div class="eyebrow">AI Product Manager</div>
+    <h1><span class="cn">石川</span><span class="en">Shi  Chuan</span></h1>
+    <p class="subtitle">专注企业级 AI 智能体平台与大模型应用落地<br><strong>全栈产品能力 · 端到端交付</strong></p>
+    <div class="chips">
+      <span class="chip on">Open to Work</span>
+      <span class="chip">智能体平台</span>
+      <span class="chip">RAG / 知识库</span>
+      <span class="chip">Prompt Engineering</span>
+      <span class="chip">全栈开发</span>
+    </div>
+    <div class="btns">
+      <a href="resume.pdf" download class="btn btn-pri">📄 下载简历</a>
+      <a href="mailto:shic68748@gmail.com" class="btn btn-gh">✉ 联系我</a>
+      <a href="https://github.com/kai-ai-dev" target="_blank" class="btn btn-gh">GitHub →</a>
     </div>
   </div>
-
-  <div class="body">
-    <div class="col">
-      <div class="sh">关于我</div>
-      <p class="about-p">你好，我是石川，一名专注于 AI 工具与智能产品设计的产品经理。致力于让复杂的大模型能力真正服务于企业场景，相信好产品应该让技术变得触手可及。目前积极寻找 AI 产品相关机会，同步探索 C 端 AI 产品可能性。</p>
-
-      <div class="spacer"></div>
-
-      <div class="sh">关注方向</div>
-      <ul class="ilist">
-        <li><span class="idot"></span>AI 产品设计与工作流自动化</li>
-        <li><span class="idot"></span>无代码 / 低代码平台开发</li>
-        <li><span class="idot"></span>大语言模型应用落地</li>
-        <li><span class="idot"></span>B2B SaaS 与企业智能化</li>
-      </ul>
-
-      <div class="spacer"></div>
-
-      <div class="sh">教育背景</div>
-      <div class="edu-box">
-        <div class="edu-s">河北农业大学现代科技学院</div>
-        <div class="edu-m">网络工程专业 &nbsp;·&nbsp; 工学学士</div>
-      </div>
+  <div class="av-wrap fi d3">
+    <div class="av-ring">
+      <div class="av-inner"><img src="avatar.png" alt="石川" onerror="this.style.display='none';this.parentNode.innerHTML='石川'"></div>
     </div>
+    <div class="av-badge ab1"><div class="v">3年</div><div class="l">AI产品经验</div></div>
+    <div class="av-badge ab2"><div class="v">10x</div><div class="l">效率提升</div></div>
+  </div>
+</div>
 
-    <div class="col col-r">
-      <div class="sh">产品与项目</div>
-      <div class="proj">
-        <div class="proj-top">
-          <div class="proj-name">AI 智能体搭建平台</div>
-          <span class="live-badge">已上线</span>
-        </div>
-        <p class="proj-p">类 Dify 的 B 端无代码智能体构建平台，支持可视化设计、配置和部署 AI Agent，适用于企业级工作流自动化场景，无需编写任何代码即可快速落地 AI 应用。</p>
-        <div class="ptags">
-          <span class="ptag">TypeScript</span>
-          <span class="ptag">AI Agent</span>
-          <span class="ptag">无代码平台</span>
-          <span class="ptag">B2B SaaS</span>
-          <span class="ptag">工作流自动化</span>
-        </div>
-        <div class="plinks">
-          <a href="https://my-agent-platform.vercel.app/" target="_blank" class="plink">在线体验</a>
-          <a href="https://github.com/shic68748-gif/my-agent-platform" target="_blank" class="plink">查看代码</a>
-        </div>
-      </div>
+<div class="stats fi d4">
+  <div class="sbox"><div class="sv">3+</div><div class="sl">年AI产品经验</div></div>
+  <div class="sbox"><div class="sv">4</div><div class="sl">独立上线项目</div></div>
+  <div class="sbox"><div class="sv">10x</div><div class="sl">文档效率提升</div></div>
+  <div class="sbox"><div class="sv">5</div><div class="sl">版本迭代周期</div></div>
+</div>
 
-      <div class="more-note">
-        更多项目正在建设中<br>敬请期待 ·
-      </div>
+<div class="sec fi d5" id="exp">
+  <div class="sec-hd"><span class="sec-n">01</span><span class="sec-t">工作经历</span><div class="sec-l"></div></div>
+  <div class="tl">
+    <div class="tli">
+      <div class="dot d-blue"></div>
+      <div class="tli-top"><div class="tli-co">中电金信软件有限公司</div><div class="tli-dt">2025.11 — 至今</div></div>
+      <div class="tli-ro">AI 产品经理</div>
+      <ul class="tli-ul"><li>负责星辰智能体平台产品体系建设，v1.7→v2.2 迭代，版本周期缩短 30%</li><li>推动知识库升级为四轨并行架构；主导长文档智能体落地金融/医疗，效率提升 10 倍</li></ul>
+    </div>
+    <div class="tli">
+      <div class="dot d-purple"></div>
+      <div class="tli-top"><div class="tli-co">北京亚康万维信息技术有限公司</div><div class="tli-dt">2025.04 — 2025.09</div></div>
+      <div class="tli-ro">AI 产品经理</div>
+      <ul class="tli-ul"><li>负责 AI 智能体平台、智能旅游 Agent、国家电网 AI 知识库等创新项目</li><li>主导大模型选型、RAG 链路设计，独立完成自研系统全栈开发</li></ul>
+    </div>
+    <div class="tli">
+      <div class="dot d-green"></div>
+      <div class="tli-top"><div class="tli-co">南城云趣信息技术（北京）有限公司</div><div class="tli-dt">2024.01 — 2025.01</div></div>
+      <div class="tli-ro">AI 产品经理 · 项目经理</div>
+      <ul class="tli-ul"><li>主导员工智能助手、合同智能审核等 AI 创新项目建设</li></ul>
+    </div>
+    <div class="tli">
+      <div class="dot d-grey"></div>
+      <div class="tli-top"><div class="tli-co">北京禹宏信安科技有限公司</div><div class="tli-dt">2023.04 — 2023.12</div></div>
+      <div class="tli-ro">产品经理 · 项目经理</div>
+      <ul class="tli-ul"><li>服务生态环境部、国家卫健委、北京大学等部委国企客户</li></ul>
     </div>
   </div>
+</div>
 
-  <footer>
-    <span>© 2025 石川 Shi Chuan</span>
-    <span>shic68748-gif.github.io</span>
-  </footer>
+<div class="sec" id="proj">
+  <div class="sec-hd"><span class="sec-n">02</span><span class="sec-t">产品与项目</span><div class="sec-l"></div></div>
+  <div class="pgrid">
+    <div class="pc">
+      <div class="pc-top"><div class="pc-name">智能体编排平台</div><span class="pc-live">已上线</span></div>
+      <p class="pc-desc">类 Dify 无代码 Agent 构建平台，SSE 流式输出，三层鉴权数据隔离，多模型扩展，MVP 完整上线。</p>
+      <div class="ptags"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Supabase</span><span class="ptag">DeepSeek</span><span class="ptag">Vercel</span></div>
+      <div class="pls"><a href="https://my-agent-platform.vercel.app/" target="_blank" class="pl">在线体验 ↗</a><a href="https://github.com/kai-ai-dev/my-agent-platform" target="_blank" class="pl">代码 ↗</a></div>
+    </div>
+    <div class="pc">
+      <div class="pc-top"><div class="pc-name">AI 投研助手 Agent</div><span class="pc-live">已上线</span></div>
+      <p class="pc-desc">LangGraph ReAct 模式 A 股投研 Agent，RAG 语义检索年报/研报，结构化报告输出，多轮对话。</p>
+      <div class="ptags"><span class="ptag">LangGraph</span><span class="ptag">RAG</span><span class="ptag">Python</span><span class="ptag">Chroma</span><span class="ptag">Streamlit</span></div>
+      <div class="pls"><a href="https://investment-agent-evj4or4qcmmpcblodhhupd.streamlit.app/" target="_blank" class="pl">在线体验 ↗</a><a href="https://github.com/kai-ai-dev/investment-agent" target="_blank" class="pl">代码 ↗</a></div>
+    </div>
+    <div class="pc">
+      <div class="pc-top"><div class="pc-name">Tripwise 旅游规划平台</div><span class="pc-live">已上线</span></div>
+      <p class="pc-desc">30秒生成 Day by Day 结构化行程，含预算拆分、Markdown 导出、JWT 鉴权与运营管理后台。</p>
+      <div class="ptags"><span class="ptag">Next.js</span><span class="ptag">FastAPI</span><span class="ptag">Supabase</span><span class="ptag">Railway</span><span class="ptag">DeepSeek</span></div>
+      <div class="pls"><a href="https://tripwise-khaki.vercel.app/" target="_blank" class="pl">在线体验 ↗</a><a href="https://github.com/kai-ai-dev/tripwise" target="_blank" class="pl">代码 ↗</a></div>
+    </div>
+    <div class="pc">
+      <div class="pc-top"><div class="pc-name">长文档创作智能体</div><span class="pc-live">已落地</span></div>
+      <p class="pc-desc">基于星辰平台的企业级长文档 Agent，10 分钟完成万字初稿，落地金融/医疗行业，效率提升 10 倍。</p>
+      <div class="ptags"><span class="ptag">RAG</span><span class="ptag">Prompt Engineering</span><span class="ptag">工作流编排</span><span class="ptag">多模态</span></div>
+      <div class="pls"><a href="https://kai-ai-dev.github.io/" class="pl">了解详情 ↗</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="skills">
+  <div class="sec-hd"><span class="sec-n">03</span><span class="sec-t">专业技能</span><div class="sec-l"></div></div>
+  <div class="sgrid">
+    <div class="scat">
+      <div class="scat-t">AI 技术</div>
+      <div class="pills"><span class="p1">Prompt Engineering</span><span class="p1">RAG</span><span class="p2">LangGraph</span><span class="p2">智能体编排</span><span class="p3">大模型选型</span><span class="p3">NLP</span></div>
+    </div>
+    <div class="scat">
+      <div class="scat-t">产品能力</div>
+      <div class="pills"><span class="p1">PRD 撰写</span><span class="p1">竞品分析</span><span class="p2">原型设计</span><span class="p2">用户研究</span><span class="p3">数据分析</span></div>
+    </div>
+    <div class="scat">
+      <div class="scat-t">开发能力</div>
+      <div class="pills"><span class="p1">Next.js</span><span class="p1">TypeScript</span><span class="p2">Python</span><span class="p2">Supabase</span><span class="p3">FastAPI</span><span class="p3">Vercel</span></div>
+    </div>
+    <div class="scat">
+      <div class="scat-t">工具 & 平台</div>
+      <div class="pills"><span class="p2">Claude Code</span><span class="p2">Cursor</span><span class="p3">Figma</span><span class="p3">VS Code</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-hd"><span class="sec-n">04</span><span class="sec-t">教育背景</span><div class="sec-l"></div></div>
+  <div class="edu-box">
+    <div class="edu-icon">🎓</div>
+    <div>
+      <div class="edu-school">河北农业大学现代科技学院</div>
+      <div class="edu-major">网络工程专业 · 工学学士 · 2018.09 — 2022.06</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2025 石川 Shi Chuan</span>
+  <div style="display:flex;align-items:center;gap:8px"><div class="fdot"></div><span>kai-ai-dev.github.io</span></div>
+  <span>北京 · shic68748@gmail.com</span>
+</footer>
+
 </div>
 </body>
 </html>
